@@ -10,7 +10,7 @@ const PokemonPage= () => {
     console.log(pokemons);
     const getPokemons = async () => {
         const {data} = await axios.get('https://pokeapi.co/api/v2/pokemon')
-        setPokemons(data.result)
+        setPokemons(data.results)
 
     }
     useEffect(() => {
