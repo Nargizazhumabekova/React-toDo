@@ -1,29 +1,31 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
+import classes from "./PokemonCard.module.css"
 
-const PokemonCard = ({pokemons}) => {
-    const [pokemon, setPokemon] = useState({})
-    console.log(pokemon, "ppppp")
 
+const PokemonCard = ({pokemon}) => {
+    const [pokemonOne, setPokemonOne] = useState({});
     const getPokemon = async (url) => {
-        try {const { data } = await axios.get(url)
-            return data
-        }catch(e)
-            {console.log("error". e)
-        } finally{
-            console.log("final")
+        try {
+            const {data} = await axios.get(url);
+            return data;
+        } catch (e) {
+            console.error("Error:", e);
+        } finally {
+            console.log("Final");
+        }
     }
-}
 
-useEffect(() => {
-    getPokemon(pokemons.url).then(pok => setPokemon(pok))
-}, [pokemons.url]);
+    useEffect(() => {
+        getPokemon(pokemon.url).then(pok => setPokemonOne(pok));
+    }, [pokemon.url]);
 
     return (
-        <div>
-    {pokemon && <img src={pokemon.sprites?.other?.dream_world?.front_default} alt="pokemon"/>}
+        <div className={classes.card_content}>
+            {pokemonOne && <img
+                src={pokemonOne.sprites?.other?.dream_world?.front_default || ''}
+                alt="pokemon"/>}
         </div>
-    );
-};
-
+    )
+}
 export default PokemonCard;

@@ -101,8 +101,7 @@ function App() {
             {/*<InputShow input={input}/>*/}
             {/*<Input placeholder={'напишите'} onChangeInput={onChangeInput}/>*/}
             <ToDoList tasks={tasks} handleDelete={handleDelete}/>
-            {/*<PokemonPage/>*/}
-            <PokemonCard/>
+                       <PokemonPage/>
         </>
 
     );

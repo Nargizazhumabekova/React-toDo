@@ -1,0 +1,13 @@
+.card_content {
+    width: 200px;
+    height: 230px;
+    background-color: #ff9191;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img {
+    width: 100px;
+    height: 100px;
+}
